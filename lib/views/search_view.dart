@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/Cubit/weather_cubit/weather_cubit.dart';
 import 'package:weather_app/widgets/custom_text_form_field.dart';
 
 class SearchView extends StatelessWidget {
@@ -17,7 +19,11 @@ class SearchView extends StatelessWidget {
         ),
       ),
       body: CustomTextFormField(
-        onSubmitted: (value) {},
+        onSubmitted: (value) {
+          var weathermodel = BlocProvider.of<WeatherCubit>(context);
+          weathermodel.getWeatherCubit(cityName: value);
+          Navigator.of(context).pop();
+        },
       ),
     );
   }
