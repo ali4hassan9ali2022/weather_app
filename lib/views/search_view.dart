@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/widgets/custom_text_form_field.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -14,6 +15,9 @@ class SearchView extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+      ),
+      body: CustomTextFormField(
+        onSubmitted: (value) {},
       ),
     );
   }
